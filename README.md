@@ -20,3 +20,4 @@ This Time Zone Converter is a Streamlit web application that allows users to con
 1. Clone this repository or download the script.
 
 2. Install the required packages:
+   pip install -r requirements.txt
