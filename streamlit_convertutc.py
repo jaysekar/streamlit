@@ -17,11 +17,13 @@ def convert_time(time, from_tz, to_tz):
     converted_time = dt_with_tz.astimezone(to_zone)
     
     # Check if the date has changed
-    next_day = converted_time.date() > today
+    day_diff = (converted_time.date() - today).days
     
     time_str = converted_time.strftime("%I:%M %p %Z")
-    if next_day:
+    if day_diff == 1:
         time_str += " (next day)"
+    elif day_diff == -1:
+        time_str += " (previous day)"
     
     return time_str
 
